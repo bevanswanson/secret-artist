@@ -1,13 +1,3 @@
-# begin
-# enter number of players
-# read random noun file
-# get word
-# assign random player to secret artist
-# pass to next player
-# if player number is secret artist display 'you are the secret artist'
-# keep going in while loop
-# end
-
 import os
 from random import randint
 
