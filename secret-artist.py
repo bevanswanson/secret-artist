@@ -36,10 +36,18 @@ def play(player_count, secret_artist, secret_word):
 def main():
     print('welcome to secret artist!')
     print('*************************')
-    player_count = int(input('how many are playing? '))
-    print('OK, thanks!')
+
     while True:
-        if input('are you ready to play? (Y/N) ').upper() == 'Y':
+        try:
+            player_count = int(input('how many players are there? '))
+            break
+        except ValueError as err:
+            print('you must enter an integer')
+
+    print('OK, thanks!')
+
+    while True:
+        if input('are you ready to play? (y/n) ').upper() == 'Y':
             secret_artist = randint(1, player_count)
             secret_word = get_word()
             play(player_count, secret_artist, secret_word)
@@ -47,6 +55,7 @@ def main():
         else:
             print('OK, nevermind')
             break
+
     print('thanks for playing secret artist')
 
 
